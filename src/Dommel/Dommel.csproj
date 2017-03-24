@@ -14,6 +14,9 @@
     <RepositoryUrl>https://github.com/henkmollema/Dommel</RepositoryUrl>
     <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.3' ">1.6.0</NetStandardImplicitPackageVersion>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">
+    <NoWarn>1701;1702;1705;1591</NoWarn>
+  </PropertyGroup>
   
   <ItemGroup>
     <PackageReference Include="Dapper" Version="1.50.2" />
@@ -25,5 +28,11 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.1.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.3'">
+    <PackageReference Include="SapientGuardian.MySql.Data">
+      <Version>6.9.815</Version>
+    </PackageReference>
   </ItemGroup>
 </Project>
